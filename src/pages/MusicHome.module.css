@@ -428,18 +428,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow-x: unset;
 }
 
 .songsGrid::-webkit-scrollbar {
   display: none;
 }
 
+/* Collections Scroll */
+.collectionsScroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  overflow-x: unset;
+}
+
+.collectionsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Song Card */
 .songCard {
   cursor: pointer;
   transition: transform 0.3s;
+  overflow: visible;
 }
 
 .songCard:hover {
@@ -470,20 +482,7 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Collections Scroll */
-.collectionsScroll {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.collectionsScroll::-webkit-scrollbar {
-  display: none;
-}
-
+/* Collection Card */
 .collectionCard {
   min-width: 300px;
   max-width: 400px;
@@ -495,7 +494,7 @@
   cursor: pointer;
   transition: transform 0.3s;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .collectionCard:hover {
@@ -577,6 +576,7 @@
 .playlistCard {
   cursor: pointer;
   transition: transform 0.3s;
+  overflow: visible;
 }
 
 .playlistCard:hover {
