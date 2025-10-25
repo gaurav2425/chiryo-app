@@ -1,0 +1,784 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: #f5f1ed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: #f5f1ed;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logoIcon {
+  font-size: 2rem;
+}
+
+.logoText {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #ff7d4d;
+}
+
+.authButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.loginBtn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #2d2d2d;
+}
+
+.loginBtn:hover {
+  color: #ff7d4d;
+}
+
+.joinBtn {
+  background: #ff7d4d;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.joinBtn:hover {
+  background: #ff6b3d;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem 3rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.cursiveText {
+  font-family: 'Brush Script MT', cursive;
+  font-weight: 400;
+  font-style: italic;
+  display: inline-block;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background: #ff7d4d;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ctaButton:hover {
+  background: #ff6b3d;
+}
+
+/* Hero Image */
+.heroImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.imageCard {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.imageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floatingIcon {
+  position: absolute;
+  font-size: 2.5rem;
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.decorStar {
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 3;
+  animation: rotate 10s linear infinite;
+}
+
+.decorCircle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2d2d2d;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Trusted Section */
+.trustedSection {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trustedText {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+}
+
+.logoGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.schoolLogo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+/* Support Section */
+.supportSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 5rem 3rem;
+  background: white;
+  margin: 3rem 0;
+  border-radius: 30px 30px 0 0;
+}
+
+.supportContent {
+  max-width: 600px;
+}
+
+.sectionTitle {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.sectionSubtitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featureItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.checkmark {
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.featureItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.featureItem p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.benefitCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.benefitIcon {
+  font-size: 2rem;
+}
+
+.supportImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoCallMockup {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg, #b4e369 0%, #7ec850 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mockupGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.mockupCard {
+  background: #2d2d2d;
+  border-radius: 10px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+/* Stats Section */
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statCard {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+/* Testimonial Section */
+.testimonialSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.testimonialImage {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 600px;
+}
+
+.testimonialImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialContent {
+  max-width: 600px;
+}
+
+.testimonialTitle {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+}
+
+.testimonialQuote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.authorName {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.authorSchool {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.testimonialNav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navDot, .navDotActive {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.navDotActive {
+  background: #ff7d4d;
+}
+
+/* Who We Help Section */
+.whoWeHelpSection {
+  padding: 5rem 3rem;
+  background: #ff8563;
+  border-radius: 30px 30px 0 0;
+}
+
+.sectionHeading {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.categoryCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.categoryCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+}
+
+.categoryCard h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.categoryCard p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.learnMoreBtn {
+  background: transparent;
+  border: none;
+  color: #ff7d4d;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dashboardPreview {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10rem;
+}
+
+.dashboardMockup {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.dashboardMockup h4 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.progressCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#ffd700 0% 100%, #e0e0e0 100% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.progressCircle::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+}
+
+.progressValue {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.statBox {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Final CTA Section */
+.finalCtaSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+  background: white;
+}
+
+.ctaHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.ctaDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.therapistCard {
+  background: #ffd700;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.therapistCard img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.therapistLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.label {
+  background: #2d2d2d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 4rem 3rem 2rem;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+}
+
+.footerBrand {
+  max-width: 400px;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footerTagline {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.footerColumn h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footerColumn a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.footerColumn a:hover {
+  color: #ff7d4d;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.badges {
+  display: flex;
+  gap: 1rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2d2d2d;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+.badge span {
+  font-size: 1.5rem;
+}
+
+.badge p {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.footerMeta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footerMetaLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerMetaLinks a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footerMetaLinks a:hover {
+  color: #ff7d4d;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero,
+  .supportSection,
+  .testimonialSection,
+  .finalCtaSection {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryCards {
+    grid-template-columns: 1fr;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+  }
+
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .statsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

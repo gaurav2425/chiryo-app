@@ -1,0 +1,368 @@
+.playerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.playerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headerBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.headerBtn:hover {
+  opacity: 0.7;
+}
+
+.albumInfo {
+  text-align: center;
+  flex: 1;
+}
+
+.albumLabel {
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+}
+
+.albumName {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-top: 0.25rem;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+}
+
+/* Album Art */
+.albumArt {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.albumArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Song Info */
+.songInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.songDetails {
+  flex: 1;
+}
+
+.songTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  font-family: 'Sora', sans-serif;
+}
+
+.artistName {
+  font-size: 1rem;
+  color: #aaa;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+.likeBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.likeBtn:hover {
+  transform: scale(1.1);
+}
+
+.liked {
+  color: #c4ff61;
+}
+
+/* Progress Bar */
+.progressContainer {
+  margin-bottom: 1.5rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: #c4ff61;
+  border-radius: 2px;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.progressThumb {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #c4ff61;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(196, 255, 97, 0.5);
+}
+
+.timeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #888;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.controlBtn:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.controlBtn:active {
+  transform: scale(0.95);
+}
+
+.playBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #c4ff61;
+  color: #000;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(196, 255, 97, 0.3);
+}
+
+.playBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(196, 255, 97, 0.5);
+}
+
+.playBtn:active {
+  transform: scale(0.95);
+}
+
+/* Lyrics Toggle */
+.lyricsToggle {
+  text-align: center;
+}
+
+.lyricsBtn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: color 0.3s;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: 1px;
+}
+
+.lyricsBtn:hover {
+  color: #fff;
+}
+
+.lyricsBtn svg {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.lyricsBtn svg.rotated {
+  transform: rotate(180deg);
+}
+
+/* Lyrics Panel */
+.lyricsPanel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0a0a0a;
+  border-radius: 20px 20px 0 0;
+  padding: 2rem;
+  max-height: 40vh;
+  overflow-y: auto;
+  animation: slideUpLyrics 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes slideUpLyrics {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.lyricsContent {
+  text-align: center;
+}
+
+.lyricsContent p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.lyricsContent p:hover {
+  opacity: 1;
+}
+
+/* Scrollbar */
+.lyricsPanel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lyricsPanel::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.lyricsPanel::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+.lyricsPanel::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .playerContainer {
+    padding: 1rem;
+  }
+
+  .albumArt {
+    max-width: 100%;
+  }
+
+  .songTitle {
+    font-size: 1.3rem;
+  }
+
+  .controls {
+    gap: 1.5rem;
+  }
+
+  .playBtn {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .controlBtn {
+    font-size: 1.5rem;
+  }
+}

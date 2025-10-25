@@ -1,0 +1,722 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@100..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 1rem 6rem;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.greetingText {
+  font-size: 1.5rem;
+  color: #aaa;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+.userName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+}
+
+.sparkle {
+  font-size: 1.2rem;
+  color: #c4ff61;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.iconButton:hover {
+  background: #2a2a2a;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Notification Badge */
+.notificationBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff4757;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Notification Popup */
+.notificationPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1a;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Popup Header */
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.popupTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.closeBtn:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Notification List */
+.notificationList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+}
+
+.notificationList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notificationList::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 10px;
+}
+
+.notificationList::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.notificationList::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Notification Item */
+.notificationItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #0a0a0a;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.notificationItem:hover {
+  background: #2a2a2a;
+  transform: translateX(5px);
+}
+
+.notificationItem:last-child {
+  margin-bottom: 0;
+}
+
+/* Notification Icon */
+.notificationIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notificationIcon.music {
+  background: rgba(196, 255, 97, 0.2);
+  color: #c4ff61;
+}
+
+.notificationIcon.like {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+}
+
+.notificationIcon.follow {
+  background: rgba(87, 101, 242, 0.2);
+  color: #5765f2;
+}
+
+/* Notification Content */
+.notificationContent {
+  flex: 1;
+}
+
+.notificationTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  font-family: 'Sora', sans-serif;
+}
+
+.notificationMessage {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+.notificationTime {
+  font-size: 0.75rem;
+  color: #666;
+  font-family: 'Sora', sans-serif;
+}
+
+/* Popup Footer */
+.popupFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.markAllReadBtn {
+  width: 100%;
+  padding: 0.875rem;
+  background: #c4ff61;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-family: 'Sora', sans-serif;
+}
+
+.markAllReadBtn:hover {
+  background: #b3ee50;
+  transform: translateY(-2px);
+}
+
+.markAllReadBtn:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notificationPopup {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .popupHeader {
+    padding: 1rem;
+  }
+
+  .notificationList {
+    padding: 0.75rem;
+  }
+
+  .notificationItem {
+    padding: 0.875rem;
+  }
+}
+
+/* Categories Section */
+.categoriesSection {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.categories {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryBtn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+  font-family: 'Sora', sans-serif;
+}
+
+.categoryActive {
+  background: #c4ff61;
+  color: #000;
+}
+
+.categoryBtn:hover:not(.categoryActive) {
+  background: #2a2a2a;
+}
+
+/* Section */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.seeAllBtn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+}
+
+.seeAllBtn:hover {
+  color: #fff;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* Songs Grid */
+.songsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.songsGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.songCard {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.songCard:hover {
+  transform: translateY(-5px);
+}
+
+.songImage {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.songImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.musicIcon {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Collections Scroll */
+.collectionsScroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.collectionsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.collectionCard {
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.collectionCard:hover {
+  transform: scale(1.02);
+}
+
+.collectionContent {
+  flex: 1;
+  z-index: 2;
+}
+
+.collectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #000;
+  line-height: 1.2;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.collectionSubtitle {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+.collectionArrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.collectionArrow:hover {
+  transform: scale(1.1);
+}
+
+.collectionImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collectionImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collectionMusicIcon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Playlist Grid */
+.playlistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.playlistCard {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.playlistCard:hover {
+  transform: translateY(-5px);
+}
+
+.playlistImage {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlistCard img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+/* Bottom Navigation */
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #2a2a2a;
+  z-index: 1000;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 25px 25px 0 0;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+  min-width: 60px;
+}
+
+.navItem:first-child {
+  background: #c4ff61;
+  color: #000;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+}
+
+.navItem:hover {
+  color: #fff;
+}
+
+.navItem:first-child:hover {
+  color: #000;
+}
+
+.navIcon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem 2rem 6rem;
+  }
+
+  .songsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .collectionsScroll {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collectionCard {
+    min-width: auto;
+  }
+
+  .playlistGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .songsGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .playlistGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Smooth Scrolling */
+.songsGrid,
+.collectionsScroll,
+.categories {
+  scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+.iconButton:focus,
+.categoryBtn:focus,
+.seeAllBtn:focus,
+.navItem:focus {
+  outline: 2px solid #c4ff61;
+  outline-offset: 2px;
+}
