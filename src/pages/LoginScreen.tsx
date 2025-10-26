@@ -20,7 +20,7 @@ const LoginScreen: React.FC = () => {
           src="https://lottie.host/bb3c4973-a22c-4519-9248-da875de0c46e/Brkf3NprAM.lottie"
           loop
           autoplay
-          style={{ width: "100%", margin: "0 auto", display: "block" }}
+          style={{ width: "90%", margin: "0 auto", display: "block" }}
         />
       </div>
       <div className={styles.bottomSheet}>
