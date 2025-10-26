@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@100..800&display=swap');
+
+.container {
+  min-height: 100vh;
+  max-width: 600px;
+  background: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  position: relative;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.illustrationWrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.illustration {
+  width: 80%;
+  max-width: 340px;
+  margin: 0 auto;
+  display: block;
+  user-select: none;
+}
+
+.bottomSheet {
+  background: #232323;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  box-shadow: 0 -2px 24px rgba(0,0,0,0.18);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.textBlock {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.highlight {
+  color: #ff7a1a;
+  font-weight: 700;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.subtitle {
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.googleBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #232323;
+  justify-content: center;
+  border: 2px solid #333;
+  border-radius: 2rem;
+  padding: 0.85rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.googleBtn:hover {
+  border: 2px solid #ff7a1a;
+  box-shadow: 0 4px 16px rgba(255,122,26,0.13);
+}
+
+.googleIcon {
+  font-size: 1.4rem;
+}
+
+.arrowBtn {
+  background: #ff7a1a;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.arrowBtn:hover {
+  background: #fff;
+  color: #ff7a1a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .illustration {
+    width: 95%;
+    max-width: 320px;
+  }
+  .bottomSheet {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+}

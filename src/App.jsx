@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/Home'
-import MusicHome from './pages/MusicHome'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import './App.css';
+import MusicHome from './pages/MusicHome';
+import LoginScreen from './pages/LoginScreen';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <MusicHome />
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginScreen />} />
+        <Route path="/home" element={<MusicHome />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
