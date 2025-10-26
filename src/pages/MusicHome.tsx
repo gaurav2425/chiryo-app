@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './MusicHome.module.css';
 import { 
   IoNotificationsOutline, 
@@ -18,9 +18,26 @@ import {
 import { BiChevronRight } from 'react-icons/bi';
 import MusicPlayer from '../components/MusicPlayer';
 
+function getUserFromCookie() {
+  const match = document.cookie.match(/chiryo_user=([^;]+)/);
+  if (match) {
+    try {
+      return JSON.parse(decodeURIComponent(match[1]));
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
 const MusicHome: React.FC = () => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [selectedSong, setSelectedSong] = useState<typeof popularSongs[0] | null>(null);
+  const [user, setUser] = useState<{ name?: string; email?: string } | null>(null);
+
+  useEffect(() => {
+    setUser(getUserFromCookie());
+  }, []);
 
   // Generate random gradient colors
   const getRandomGradient = () => {
@@ -147,7 +164,7 @@ const MusicHome: React.FC = () => {
       <header className={styles.header}>
         <div className={styles.greeting}>
           <span className={styles.greetingText}>Hello, </span>
-          <span className={styles.userName}>John Smith</span>
+          <span className={styles.userName}>{user?.name || "User"}</span>
           <IoSparkles className={styles.sparkle} />
         </div>
         <div className={styles.headerActions}>
